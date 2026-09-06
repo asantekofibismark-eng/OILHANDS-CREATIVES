@@ -1,261 +1,940 @@
-index<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset=
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OiledHands Creatives</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<title>OiledHands Creatives | Creative Ideas. Powerful Visuals.</title>
+
+<meta name="description" content="OiledHands Creatives - Professional graphic design, branding, photography and visual communication.">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --gold: #d4af37;
+    --gold-light: #f1d675;
+    --black: #050505;
+    --dark: #0d0d0d;
+    --dark2: #151515;
+    --white: #ffffff;
+    --gray: #b8b8b8;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+/* ================= NAVIGATION ================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(5,5,5,0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 27px;
+    cursor: pointer;
+    color: white;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 25px 70px;
+
+    background:
+        radial-gradient(circle at top, rgba(212,175,55,0.13), transparent 35%),
+        linear-gradient(135deg, #090909, #000000);
+}
+
+.hero-content {
+    max-width: 950px;
+}
+
+.hero-small {
+    color: var(--gold);
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 7px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 9vw, 105px);
+    line-height: 0.98;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.gold-text {
+    color: var(--gold);
+}
+
+.hero p {
+    max-width: 720px;
+    margin: auto;
+    color: #d0d0d0;
+    font-size: clamp(17px, 2vw, 22px);
+}
+
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 32px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--gold);
+    color: black;
+}
+
+.btn-filled {
+    background: var(--gold);
+    color: black;
+}
+
+/* ================= GENERAL ================= */
+
+section {
+    padding: 90px 25px;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title span {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-size: clamp(35px, 5vw, 55px);
+    margin-top: 10px;
+}
+
+.section-title p {
+    max-width: 650px;
+    margin: 15px auto;
+    color: var(--gray);
+}
+
+/* ================= SERVICES ================= */
+
+.services {
+    background: var(--dark);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background: var(--dark2);
+    padding: 35px 25px;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+}
+
+.service-icon {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+    color: var(--gold);
+}
+
+.service-card p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+/* ================= PORTFOLIO ================= */
+
+.portfolio {
+    background: #070707;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project {
+    min-height: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background:
+        linear-gradient(135deg, #292000, #111111 55%, #050505);
+    border: 1px solid #2c2c2c;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.4s;
+}
+
+.project:hover {
+    transform: scale(1.02);
+    border-color: var(--gold);
+}
+
+.project-content {
+    width: 100%;
+    padding: 25px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.95));
+}
+
+.project-content span {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.project-content h3 {
+    font-size: 23px;
+    margin-top: 5px;
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    background: var(--dark);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-box {
+    min-height: 400px;
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle, rgba(212,175,55,0.15), transparent 55%),
+        #080808;
+}
+
+.about-logo {
+    color: var(--gold);
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.about-text h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: var(--gray);
+    margin-bottom: 18px;
+}
+
+/* ================= WHY US ================= */
+
+.why {
+    background: #050505;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.why-card {
+    padding: 30px;
+    border-left: 2px solid var(--gold);
+    background: #0d0d0d;
+}
+
+.why-card h3 {
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    color: var(--gray);
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+    background:
+        radial-gradient(circle at center, rgba(212,175,55,0.12), transparent 50%),
+        #080808;
+}
+
+.contact-box {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-box h2 {
+    font-size: clamp(35px, 6vw, 60px);
+}
+
+.contact-box p {
+    color: var(--gray);
+    margin: 20px auto 30px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.contact-info div {
+    color: var(--gray);
+}
+
+.contact-info strong {
+    color: var(--gold);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #000;
+    border-top: 1px solid #222;
+    padding: 35px 25px;
+    text-align: center;
+}
+
+footer .footer-logo {
+    color: var(--gold);
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #777;
+    font-size: 13px;
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #25D366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 28px;
+    z-index: 999;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #080808;
+        display: none;
+        flex-direction: column;
+        padding: 25px;
+        text-align: center;
+        border-bottom: 1px solid #222;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #080808;
-      color: #ffffff;
-      line-height: 1.6;
+    .nav-links.active {
+        display: flex;
     }
 
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      background:
-        radial-gradient(circle at top, #292000 0%, #080808 45%);
+    .menu-btn {
+        display: block;
     }
 
-    .hero {
-      max-width: 850px;
+    .service-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .navbar {
+        padding: 16px 18px;
     }
 
     .logo {
-      font-size: 18px;
-      letter-spacing: 5px;
-      color: #d4af37;
-      font-weight: bold;
-      margin-bottom: 30px;
-    }
-
-    h1 {
-      font-size: clamp(45px, 10vw, 90px);
-      line-height: 1;
-      margin-bottom: 25px;
-    }
-
-    h1 span {
-      color: #d4af37;
-    }
-
-    .hero p {
-      font-size: 19px;
-      color: #cccccc;
-      margin-bottom: 35px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 25px;
-      margin: 5px;
-      border: 1px solid #d4af37;
-      color: #d4af37;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #d4af37;
-      color: #000;
+        font-size: 15px;
+        letter-spacing: 2px;
     }
 
     section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
+        padding: 70px 18px;
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
+    .hero {
+        padding-left: 18px;
+        padding-right: 18px;
     }
 
-    .section-title h2 {
-      font-size: 38px;
-      color: #d4af37;
-      margin-bottom: 10px;
+    .hero-small {
+        font-size: 12px;
+        letter-spacing: 4px;
     }
 
-    .about {
-      text-align: center;
-      max-width: 750px;
-      margin: auto;
-      color: #cccccc;
-      font-size: 18px;
+    .hero h1 {
+        font-size: 52px;
     }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+    .hero p {
+        font-size: 16px;
     }
 
-    .card {
-      padding: 30px 20px;
-      background: #111111;
-      border: 1px solid #292929;
-      text-align: center;
-      border-radius: 8px;
+    .service-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
     }
 
-    .card h3 {
-      color: #d4af37;
-      margin-bottom: 10px;
+    .about-box {
+        min-height: 280px;
     }
 
-    .card p {
-      color: #aaa;
+    .about-text h2 {
+        font-size: 35px;
     }
 
-    .portfolio {
-      text-align: center;
+    .btn {
+        width: 100%;
     }
 
-    .portfolio-box {
-      padding: 70px 20px;
-      background: #111111;
-      border: 1px dashed #555;
-      color: #aaa;
-      border-radius: 8px;
-    }
+}
 
-    .contact {
-      text-align: center;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      background: #050505;
-      color: #777;
-      border-top: 1px solid #222;
-    }
-
-    footer span {
-      color: #d4af37;
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="hero">
-      <div class="logo">OILEDHANDS CREATIVES</div>
+<!-- NAVIGATION -->
 
-      <h1>
-        Creative Ideas.<br>
-        <span>Powerful Visuals.</span>
-      </h1>
+<header>
 
-      <p>
-        Professional graphic design, branding, photography
-        and visual communication crafted to make your ideas stand out.
-      </p>
+<nav class="navbar">
 
-      <a href="#portfolio" class="btn">View Portfolio</a>
-      <a href="#contact" class="btn">Contact Me</a>
-    </div>
-  </header>
+<div class="logo">
+OILEDHANDS
+</div>
 
-  <section id="about">
-    <div class="section-title">
-      <h2>About Us</h2>
-    </div>
+<div class="menu-btn" onclick="toggleMenu()">
+☰
+</div>
 
-    <p class="about">
-      OiledHands Creatives is a creative design brand focused on
-      transforming ideas into powerful visual experiences.
-      From branding and promotional materials to digital artwork,
-      we create designs that communicate, inspire and connect.
-    </p>
-  </section>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-  <section id="services">
-    <div class="section-title">
-      <h2>Our Services</h2>
-    </div>
+</nav>
 
-    <div class="services">
+</header>
 
-      <div class="card">
-        <h3>Graphic Design</h3>
-        <p>Professional flyers, posters, banners and digital designs.</p>
-      </div>
 
-      <div class="card">
-        <h3>Branding</h3>
-        <p>Logos and visual identities that give your brand character.</p>
-      </div>
+<!-- HERO -->
 
-      <div class="card">
-        <h3>T-Shirt Design</h3>
-        <p>Creative apparel graphics and professional mockups.</p>
-      </div>
+<section class="hero" id="home">
 
-      <div class="card">
-        <h3>Photography</h3>
-        <p>Creative portrait and promotional photography concepts.</p>
-      </div>
+<div class="hero-content">
 
-      <div class="card">
-        <h3>Social Media</h3>
-        <p>Eye-catching content designed for your social platforms.</p>
-      </div>
+<div class="hero-small">
+OILEDHANDS CREATIVES
+</div>
 
-      <div class="card">
-        <h3>Creative Direction</h3>
-        <p>Ideas, concepts and visual direction for special projects.</p>
-      </div>
+<h1>
+Creative Ideas.<br>
+<span class="gold-text">Powerful Visuals.</span>
+</h1>
 
-    </div>
-  </section>
+<p>
+Professional graphic design, branding, photography
+and visual communication crafted to make your ideas
+stand out.
+</p>
 
-  <section id="portfolio">
-    <div class="section-title">
-      <h2>Portfolio</h2>
-    </div>
+<div class="buttons">
 
-    <div class="portfolio">
-      <div class="portfolio-box">
-        <h3>Your Creative Work Goes Here</h3>
-        <p>
-          We'll add your actual designs, posters, logos,
-          photographs and projects here next.
-        </contact">
-    <div class="section-title">
-      <h2>Let's Create</h2>
-    </div>
+<a href="#portfolio" class="btn btn-filled">
+View Portfolio
+</a>
 
-    <div class="contact">
-      <p>
-        Have a project in mind? Let's turn your idea into something remarkable.
-      </p>
+<a href="#contact" class="btn">
+Contact Me
+</a>
 
-      <br>
+</div>
 
-      <a href="mailto:your@email.com" class="btn">Email Me</a>
-    </div>
-  </section>
+</div>
 
-  <footer>
-    © 2026 <span>OiledHands Creatives</span>. All Rights Reserved.
-  </footer>
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>WHAT WE DO</span>
+
+<h2>Our Services</h2>
+
+<p>
+Creative solutions designed to help individuals,
+businesses and organizations communicate with impact.
+</p>
+
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+<div class="service-icon">🎨</div>
+<h3>Graphic Design</h3>
+<p>
+Professional flyers, posters, social media graphics,
+banners and promotional designs.
+</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">✦</div>
+<h3>Branding</h3>
+<p>
+Logos, visual identities, brand materials and creative
+direction that make your brand memorable.
+</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">📷</div>
+<h3>Photography</h3>
+<p>
+Professional portraits, events, product photography
+and creative visual storytelling.
+</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">💡</div>
+<h3>Creative Direction</h3>
+<p>
+Ideas, concepts and visual strategies transformed into
+powerful creative experiences.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+
+<section class="portfolio" id="portfolio">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>SELECTED WORK</span>
+
+<h2>Our Portfolio</h2>
+
+<p>
+A selection of creative projects and visual concepts
+created by OiledHands Creatives.
+</p>
+
+</div>
+
+<div class="portfolio-grid">
+
+<div class="project">
+<div class="project-content">
+<span>BRANDING</span>
+<h3>Brand Identity</h3>
+</div>
+</div>
+
+<div class="project">
+<div class="project-content">
+<span>GRAPHIC DESIGN</span>
+<h3>Event Campaign</h3>
+</div>
+</div>
+
+<div class="project">
+<div class="project-content">
+<span>TYPOGRAPHY</span>
+<h3>Creative Typography</h3>
+</div>
+</div>
+
+<div class="project">
+<div class="project-content">
+<span>PHOTOGRAPHY</span>
+<h3>Portrait Session</h3>
+</div>
+</div>
+
+<div class="project">
+<div class="project-content">
+<span>PRINT DESIGN</span>
+<h3>Promotional Materials</h3>
+</div>
+</div>
+
+<div class="project">
+<div class="project-content">
+<span>DIGITAL MEDIA</span>
+<h3>Social Media Campaign</h3>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div class="about-box">
+
+<div class="about-logo">
+OILEDHANDS<br>
+<span>CREATIVES</span>
+</div>
+
+</div>
+
+<div class="about-text">
+
+<div class="section-title" style="text-align:left; margin-bottom:20px;">
+
+<span>ABOUT US</span>
+
+<h2>Ideas Into Visuals.</h2>
+
+</div>
+
+<p>
+OiledHands Creatives is a creative design and visual
+communication brand focused on turning ideas into
+beautiful, meaningful and powerful visuals.
+</p>
+
+<p>
+From branding and graphic design to photography and
+creative direction, we create visuals that communicate,
+inspire and leave a lasting impression.
+</p>
+
+<a href="#contact" class="btn">
+Work With Us
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY US -->
+
+<section class="why">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>WHY OILEDHANDS</span>
+
+<h2>Creative With Purpose</h2>
+
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+<h3>01 — Creativity</h3>
+<p>
+Fresh concepts and original visual ideas tailored
+to your project.
+</p>
+</div>
+
+<div class="why-card">
+<h3>02 — Quality</h3>
+<p>
+Professional attention to detail from concept
+through final delivery.
+</p>
+</div>
+
+<div class="why-card">
+<h3>03 — Impact</h3>
+<p>
+Visuals designed not just to look good, but to
+communicate and connect.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<div class="section-title">
+
+<span>LET'S CREATE</span>
+
+<h2>Have An Idea?</h2>
+
+</div>
+
+<p>
+Let's transform your idea into a powerful visual
+experience. Get in touch and let's create something
+great together.
+</p>
+
+<div class="buttons">
+
+<a href="mailto:your@email.com" class="btn btn-filled">
+Email Me
+</a>
+
+<a href="https://wa.me/233000000000" class="btn">
+WhatsApp
+</a>
+
+</div>
+
+<div class="contact-info">
+
+<div>
+<strong>Email</strong><br>
+your@email.com
+</div>
+
+<div>
+<strong>Location</strong><br>
+Ghana
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-logo">
+OILEDHANDS CREATIVES
+</div>
+
+<p>
+© 2026 OiledHands Creatives. All Rights Reserved.
+</p>
+
+<p>
+Creative Ideas. Powerful Visuals.
+</p>
+
+</footer>
+
+
+<!-- WHATSAPP BUTTON -->
+
+<a
+href="https://wa.me/233000000000"
+class="whatsapp"
+target="_blank"
+aria-label="WhatsApp">
+☏
+</a>
+
+
+<script>
+
+function toggleMenu() {
+
+    const menu = document.getElementById("navLinks");
+
+    menu.classList.toggle("active");
+
+}
+
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        document.getElementById("navLinks").classList.remove("active");
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
