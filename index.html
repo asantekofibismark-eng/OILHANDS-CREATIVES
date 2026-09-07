@@ -537,6 +537,44 @@ footer p {
     position: relative;
     z-index: 1;
 }
+/* ================= PORTFOLIO GALLERY ================= */
+
+.gallery-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery-overlay.active {
+    display: flex;
+}
+
+.gallery-overlay img {
+    max-width: 95%;
+    max-height: 85vh;
+    object-fit: contain;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+}
+
+.gallery-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.project {
+    cursor: pointer;
+}    
 
 </style>
 </head>
