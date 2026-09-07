@@ -997,7 +997,8 @@ const galleryImage = document.getElementById("galleryImage");
 const galleryClose = document.getElementById("galleryClose");
 
 document.querySelectorAll(".project").forEach(function(project) {
-    project.addEventListener("click", function(event) {
+project.addEventListener("click", function(event) {
+    event.preventDefault();
     event.preventDefault();
         const image = project.querySelector("img");
         galleryImage.src = image.src;
