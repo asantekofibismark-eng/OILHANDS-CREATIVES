@@ -992,6 +992,28 @@ document.querySelectorAll(".nav-links a").forEach(function(link) {
     });
 
 });
+const galleryOverlay = document.getElementById("galleryOverlay");
+const galleryImage = document.getElementById("galleryImage");
+const galleryClose = document.getElementById("galleryClose");
+
+document.querySelectorAll(".project").forEach(function(project) {
+    project.addEventListener("click", function() {
+        const image = project.querySelector("img");
+        galleryImage.src = image.src;
+        galleryImage.alt = image.alt;
+        galleryOverlay.classList.add("active");
+    });
+});
+
+galleryClose.addEventListener("click", function() {
+    galleryOverlay.classList.remove("active");
+});
+
+galleryOverlay.addEventListener("click", function(event) {
+    if (event.target === galleryOverlay) {
+        galleryOverlay.classList.remove("active");
+    }
+});
 
 </script>
 
