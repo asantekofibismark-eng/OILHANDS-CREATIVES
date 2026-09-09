@@ -404,7 +404,27 @@ section {
     text-align: center;
     color: var(--gold);
 }
+.social-buttons .btn::before {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
 
+.social-buttons .btn:nth-child(1)::before {
+    content: "◎";
+}
+
+.social-buttons .btn:nth-child(2)::before {
+    content: "♪";
+}
+
+.social-buttons .btn:nth-child(3)::before {
+    content: "f";
+    font-weight: bold;
+}
+
+.social-buttons .btn:nth-child(4)::before {
+    content: "▶";
+}
 /* ================= FOOTER ================= */
 
 footer {
