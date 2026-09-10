@@ -571,8 +571,11 @@ footer p {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s ease;
 }
-
+.project:hover img {
+    transform: scale(1.05);
+}
 .project-content {
     position: relative;
     z-index: 1;
